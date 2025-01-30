@@ -6,15 +6,6 @@
     scroll-behavior: smooth;
     color: black;
 }
-@media screen (max-width: 9921px){
-    header,header.sticity{}
-}
-
-p{
-    font-weight: 300;
-    color: #111;
-}
-
 header{
     position: fixed;
     top: 0px;
@@ -70,15 +61,34 @@ header .navbar li a:hover{
 }
 
 
-.banniere{
+.banniere {
     position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(./images/img.9.jpg), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    overflow: hidden; 
+    animation: slide 12s infinite; 
     background-size: cover;
+}
+
+@keyframes slide {
+    0% { background-image: url(./images/img.9.jpg), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    33% { background-image: url(./images/img10.jpg), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    66% { background-image: url(./images/img11.jpg), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+    100% { background-image: url(./images/img10.jpg), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+}
+
+.banniere::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1; /* Pour s'assurer que le gradient reste au-dessus */
 }
 .banniere .contenu{
      max-width: 70%;
@@ -102,7 +112,7 @@ header .navbar li a:hover{
     background: blue;
     padding: 10px 20px;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: -35px;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
@@ -219,7 +229,7 @@ section{
 }
 
 .realisations{
-    margin-top: -130px;
+    margin-top: -80px;
 }
 .realisations .contenu{
     display: flex;
@@ -475,6 +485,7 @@ header.sticy li a:hover{
     color: blue;
     border-bottom: 2px solid blue;
 } 
-@media (max-width: 991px) {
-    
+.slide{
+    background-image: url(./images/img.9.jpg);
+    background-size: cover;
 }
