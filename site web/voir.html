@@ -10,23 +10,49 @@
   
   <header class="slide">
     <a href="#" class="logo"> <span>Y</span>etuvekaTech</a>
-    <ul class="navbar">
-        <li><a href="#" > Acceuil</a> </li>
-        <li><a href="#" > A propos</a> </li>
-        <li><a href="#" > Nos services</a> </li>
-        <li><a href="#" >  Nos réalisations</a> </li>
-        <li><a href="#" > Nos experts</a> </li>
-    <a href="#"  class="btn-contact">Contact</a>
-    </ul>
   </header>
   
-<section class="slide">
-        <div>
 
-            <div class="titre">
-                <a href="home.html" class="btn1">retour</a>
+  <section class="voir" id="voir">
+    <div class="titre">
+      <h2 class="titre-texte">Nos <span>S</span>ervices</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Porro atque harum asperiores vero quibusdam ratione.
+        </p>
+    </div>
+    <div class="contenu">
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/img15.jpg" alt="">
             </div>
+            <div class="text">
+                <h3>Le développement des logiciels personnalisés</h3>
+            </div>
+            </div>
+            <div class="box">
+                <div class="imbox">
+                    <img src="./images/img16.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3 >support et maintenance</h3>
+                </div>
+                </div>
+            <div class="box">
+                <div class="imbox">
+                    <img src="./images/img17.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3 >support numeriques</h3>
+                </div>
+                </div>
+                
+    </div>     
+    </div>
+    <div>
+        <div class="titre">
+            <a href="home.html" class="btn3">retour</a>
         </div>
+    </div>
 </section>
 
 <footer>
@@ -35,3 +61,18 @@
         <p>copyright 2025 <a href="#">yao yetu</a> YetuvekaTech. Tous droits reservés  </p>
     </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.imbox img').forEach(img => {
+            img.addEventListener('click', () => {
+                img.classList.toggle('active'); // Ajoute ou retire la classe active
+                setTimeout(() => {
+                    img.classList.remove('active'); // Retire la classe après un court délai
+                }, 200); // Temps doit correspondre à la durée de la transition CSS
+            });
+        });
+    </script>
+  
+        
+    </body>
+    </html>
