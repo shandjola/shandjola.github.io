@@ -2,21 +2,20 @@
 include 'db_connection.php'; // inclusion du fichier de la connection
 
 
-if(isset($_POST['envoyer']))
+if(isset($_POST['Envoyer']))
 {
-    $nom = $_POST['nom'];
-    $mail = $_POST['mail'];
-    $message = $_POST['message'];
+    if(isset($_POST['nom']) AND isset($_POST['mail']) AND isset($_POST['message']))
+    {
+        if(!empty($_POST['nom']) AND  !empty($_POST['mail']) AND !empty($_POST['message']) )
+        {
+           $nom=htmlspecialchars($_POST['nom']); // methode php qui permet de filtrer les donnees pour eviter que l'utilisateur insere du n'importe quoi 
+           $mail=htmlspecialchars($_POST['mail']);
+           $message=htmlspecialchars($_POST['message']);
 
-    $sql = ("INSERT INTO 'utilisateurs'('id','nom','mail','message') VALUES  (:nom, :mail, :message)" );
-    $stmt - $conn->prepare($sql);
+           echo "<h2> Bonjour <mark><br> $nom </br></mark> merci pour votre mail: <mark> <br> $mail </br></mark>, nous avons lu votre message: </br></br> $message </h2>";
 
-    $stmt->bindParam(' :nom', $nom);
-    
-    $stmt->bindParam(' :mail', $mail);
-    
-    $stmt->bindParam(' :message', $message);
-    $stmt->execute();
+        }
+    }
     
     
 }
